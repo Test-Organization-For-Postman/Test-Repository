@@ -1,0 +1,21 @@
+{
+	"info": {
+		"_postman_id": "48141879-ac50fc0b-1f21-4130-bdff-d12d99b7309e",
+		"name": "Test Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test Request",
+			"id": "48141879-18b9b2b8-9fe2-4ae4-b6bc-bca6890c80d7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
