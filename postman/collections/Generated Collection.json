@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "667d299d-2e58-466e-bf7b-5221204587c5",
+		"name": "Generated Collection",
+		"description": "Un'API di esempio per gestire una lista di attività da fare.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "48141879-667d299d-2e58-466e-bf7b-5221204587c5"
+	},
+	"item": [
+		{
+			"name": "todos",
+			"item": [
+				{
+					"name": "{todoId}",
+					"item": [
+						{
+							"name": "Ottieni una singola attività",
+							"id": "ebf8e726-f04a-4072-96d2-dfce2db4b7ff",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/todos/:todoId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"todos",
+										":todoId"
+									],
+									"variable": [
+										{
+											"key": "todoId",
+											"value": "5349",
+											"description": "(Required) L'ID dell'attività da recuperare."
+										}
+									]
+								},
+								"description": "Restituisce i dettagli di una specifica attività tramite il suo ID."
+							},
+							"response": [
+								{
+									"id": "8a220191-2a3c-4ff2-850d-affda0454508",
+									"name": "Dettagli dell'attività.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/todos/:todoId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"todos",
+												":todoId"
+											],
+											"variable": [
+												{
+													"key": "todoId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 1,\n  \"title\": \"Comprare il latte\",\n  \"completed\": false\n}"
+								},
+								{
+									"id": "d97be52c-cee3-495e-9d85-77bebdc13d2b",
+									"name": "Attività non trovata.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/todos/:todoId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"todos",
+												":todoId"
+											],
+											"variable": [
+												{
+													"key": "todoId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": []
+								}
+							]
+						},
+						{
+							"name": "Cancella un'attività",
+							"id": "03e12748-06ca-4fa0-b04a-969cf55ce51e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/todos/:todoId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"todos",
+										":todoId"
+									],
+									"variable": [
+										{
+											"key": "todoId",
+											"value": "5349",
+											"description": "(Required) L'ID dell'attività da cancellare."
+										}
+									]
+								},
+								"description": "Rimuove un'attività dalla lista tramite il suo ID."
+							},
+							"response": [
+								{
+									"id": "6005dd26-544e-4d80-a9c0-c396ab649080",
+									"name": "Attività cancellata con successo.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/todos/:todoId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"todos",
+												":todoId"
+											],
+											"variable": [
+												{
+													"key": "todoId"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": []
+								}
+							]
+						}
+					],
+					"id": "e22134b0-921e-4b8a-afd0-284060583c6c"
+				},
+				{
+					"name": "Ottieni tutte le attività",
+					"id": "955a5c75-29b2-4fa8-99fa-b40b4976df26",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/todos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"todos"
+							]
+						},
+						"description": "Restituisce un elenco di tutte le attività (To-Do)."
+					},
+					"response": [
+						{
+							"id": "748964bd-4609-4e27-8fcd-d5b9f13fa5c1",
+							"name": "Un array di oggetti To-Do.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/todos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"todos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": 1,\n    \"title\": \"Comprare il latte\",\n    \"completed\": false\n  },\n  {\n    \"id\": 1,\n    \"title\": \"Comprare il latte\",\n    \"completed\": false\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Crea una nuova attività",
+					"id": "1d538cb8-9ad1-4039-b8b8-035ad3671469",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Chiamare il commercialista\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/todos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"todos"
+							]
+						},
+						"description": "Aggiunge una nuova attività alla lista."
+					},
+					"response": [
+						{
+							"id": "fb5942af-2237-4ea7-85ba-d14ee53a0b5b",
+							"name": "Attività creata con successo.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"Chiamare il commercialista\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/todos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"todos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": 1,\n  \"title\": \"Comprare il latte\",\n  \"completed\": false\n}"
+						}
+					]
+				}
+			],
+			"id": "a4726b66-61d6-4379-ae28-08a694833fcc"
+		}
+	],
+	"variable": [
+		{
+			"id": "e6d2aae5-648d-426f-8a58-7c27f1731991",
+			"key": "baseUrl",
+			"value": "https://api.example.com/v1"
+		}
+	]
+}
